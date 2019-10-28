@@ -279,11 +279,10 @@
       <bpmn:script>execution.setVariable("refPaperTitle", "Auswirkungen des Moduls Geschäftsprozessintegration auf die mentale Gesundheit von Studierenden");
 execution.setVariable("refPaperAbstract", "Lorem ipsum ...");</bpmn:script>
     </bpmn:scriptTask>
-    <bpmn:scriptTask id="Task_AACSBRatingDesJournalsErmitteln" name="AACSB-Rating des Journals ermitteln" scriptFormat="JavaScript">
+    <bpmn:serviceTask id="Task_AACSBRatingDesJournalsErmitteln" name="AACSB-Rating des Journals ermitteln" camunda:delegateExpression="${getJournalRatingAdapter}">
       <bpmn:incoming>SequenceFlow_164geph</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1wdydgz</bpmn:outgoing>
-      <bpmn:script>execution.setVariable("journalAacsbRating", 3);</bpmn:script>
-    </bpmn:scriptTask>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1cnfcp8">
@@ -616,7 +615,7 @@ execution.setVariable("refPaperAbstract", "Lorem ipsum ...");</bpmn:script>
       <bpmndi:BPMNShape id="ScriptTask_0ou2dsu_di" bpmnElement="Task_MetadatenZuReferenzpaperSuchen">
         <dc:Bounds x="323" y="726" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ScriptTask_0nb4kov_di" bpmnElement="Task_AACSBRatingDesJournalsErmitteln">
+      <bpmndi:BPMNShape id="ServiceTask_0f1ij8x_di" bpmnElement="Task_AACSBRatingDesJournalsErmitteln">
         <dc:Bounds x="465" y="726" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
